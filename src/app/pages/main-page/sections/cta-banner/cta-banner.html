@@ -1,0 +1,28 @@
+<section class="banner">
+  <div class="inner">
+    <div class="content">
+      <h2 class="title">
+        Если вы хотите поделиться идеями для развития OpenIDE или готовы присоединиться к
+        сообществу — напишите нам
+      </h2>
+      <p class="subtitle">
+        Мы читаем каждое обращение и учитываем пожелания при планировании новых возможностей
+      </p>
+    </div>
+
+    <div class="form-wrap">
+      <form class="form" *ngIf="!sent(); else successTpl" (submit)="onSubmit($event)">
+        <input
+          type="email"
+          class="input"
+          placeholder="Ваш email"
+          [formControl]="email"
+        />
+        <button type="submit" class="submit-btn">Написать нам</button>
+      </form>
+      <ng-template #successTpl>
+        <p class="success-msg">Спасибо! Мы свяжемся с вами.</p>
+      </ng-template>
+    </div>
+  </div>
+</section>

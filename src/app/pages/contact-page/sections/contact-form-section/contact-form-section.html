@@ -1,0 +1,130 @@
+<section class="section">
+  <div class="inner">
+    <div class="form-card">
+      <h2 class="form-title">Связаться с нами</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <div class="field">
+          <label class="sr-only" for="name">Имя</label>
+          <input
+            id="name"
+            formControlName="name"
+            type="text"
+            placeholder="Имя *"
+            [ngClass]="{ 'input-error': error('name') }"
+            class="input"
+          />
+          <span class="error-text" *ngIf="error('name')">{{ error('name') }}</span>
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="email">Email</label>
+          <input
+            id="email"
+            formControlName="email"
+            type="email"
+            placeholder="Email *"
+            [ngClass]="{ 'input-error': error('email') }"
+            class="input"
+          />
+          <span class="error-text" *ngIf="error('email')">{{ error('email') }}</span>
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="message">Сообщение</label>
+          <textarea
+            id="message"
+            formControlName="message"
+            placeholder="Сообщение"
+            [ngClass]="{ 'input-error': error('message') }"
+            class="textarea"
+            rows="5"
+          ></textarea>
+          <span class="error-text" *ngIf="error('message')">{{ error('message') }}</span>
+        </div>
+
+        <div class="consent-row">
+          <label class="consent-label">
+            <input type="checkbox" formControlName="consent" class="checkbox" />
+            <span>
+              Я соглашаюсь на
+              <a href="/privacy" class="consent-link">обработку персональных данных</a>
+            </span>
+          </label>
+          <span class="error-text" *ngIf="error('consent')">{{ error('consent') }}</span>
+        </div>
+
+        <div class="actions">
+          <button
+            type="button"
+            class="file-btn"
+            (click)="triggerFile(fileInput)"
+            [disabled]="submitting()"
+          >
+            {{ fileName() || 'Прикрепить файл' }}
+          </button>
+          <input #fileInput type="file" style="display:none" (change)="onFileChange($event)" />
+          <button type="submit" class="submit-btn" [disabled]="submitting()">
+            <span class="spinner" *ngIf="submitting()"></span>
+            <ng-container *ngIf="!submitting()">Отправить</ng-container>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <aside class="sidebar">
+      <div class="side-block">
+        <h3 class="side-title">Присоединяйтесь</h3>
+        <ul class="side-list">
+          <li>
+            <a href="https://t.me/openide" class="side-link" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/social/telegram.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>Telegram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://vk.com/openide" class="side-link" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/social/vk.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>VK</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtube.com/@openide" class="side-link" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/social/yt.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>YouTube</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://rutube.ru" class="side-link" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/social/rt.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>RuTube</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://gitflic.ru/project/openide" class="side-link" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/social/gitFlic.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>GitFlic</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr class="divider" />
+      <div class="side-block">
+        <h3 class="side-title">Свяжитесь с нами</h3>
+        <ul class="side-list">
+          <li>
+            <a href="https://t.me/openide_chat" class="side-link" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/social/telegram.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>Telegram-чат</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@openide.ru" class="side-link">
+              <img src="/icons/languages/envelope.svg" width="20" height="20" alt="" aria-hidden="true" />
+              <span>info&#64;openide.ru</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

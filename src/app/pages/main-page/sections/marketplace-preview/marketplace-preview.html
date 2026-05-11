@@ -1,0 +1,23 @@
+<section class="section">
+  <div class="inner">
+    <div class="left">
+      <h2 class="title">
+        Маркетплейс<br />с 200+ плагинами
+      </h2>
+      <p class="description">
+        Расширяйте IDE под свой стек технологий — языки, фреймворки, DevOps-инструменты, темы и
+        AI-ассистенты
+      </p>
+      <app-button href="/marketplace/" size="md">Перейти в маркетплейс</app-button>
+    </div>
+
+    <div class="right">
+      <div class="icons-grid">
+        <div class="icon-item" *ngFor="let icon of languageIcons">
+          <img [src]="icon.src" [alt]="icon.label" width="32" height="32" class="icon-img" />
+        </div>
+      </div>
+      <p class="icons-note">и многое другое в маркетплейсе</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<section class="section">
+  <div class="inner">
+    <div class="header">
+      <div class="label">Принципы</div>
+      <h2 class="title">Ценности, которые нас объединяют</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card" *ngFor="let v of values">
+        <div class="icon-wrap">
+          <img [src]="v.icon" alt="" aria-hidden="true" width="48" height="48" />
+        </div>
+        <h3 class="card-title">{{ v.title }}</h3>
+        <p class="card-text">{{ v.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

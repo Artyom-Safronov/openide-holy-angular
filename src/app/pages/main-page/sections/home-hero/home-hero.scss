@@ -1,0 +1,176 @@
+@use 'styles/variables' as *;
+
+.hero {
+  position: relative;
+  background: $white;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+
+  @media (max-width: $bp-1023) {
+    flex-direction: column;
+    padding: 60px 24px 48px;
+    text-align: center;
+  }
+
+  @media (max-width: $bp-768) {
+    padding: 40px 16px 36px;
+  }
+}
+
+.content {
+  min-width: 0;
+
+  @media (max-width: $bp-1023) {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.label {
+  display: inline-block;
+  background: $violet-pale;
+  color: $violet-1;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px 14px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: $black;
+  margin-bottom: 20px;
+
+  @media (max-width: $bp-1200) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $bp-768) {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(51, 60, 87, 0.7);
+  margin-bottom: 36px;
+  max-width: 500px;
+
+  @media (max-width: $bp-1023) {
+    max-width: 100%;
+  }
+
+  @media (max-width: $bp-768) {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: $bp-1023) {
+    justify-content: center;
+  }
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: $radius-button;
+  border: 1.5px solid $violet-1;
+  color: $violet-1;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: $violet-1;
+    color: $white;
+  }
+}
+
+.visual {
+  position: relative;
+  min-width: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: $bp-1023) {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.pro-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: $gradient-main;
+  padding: 16px 24px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    opacity: 0.92;
+  }
+}
+
+.pro-banner-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: $white;
+
+  @media (max-width: $bp-768) {
+    font-size: 14px;
+  }
+}
+
+.pro-banner-vector {
+  height: 28px;
+  opacity: 0.4;
+  display: none;
+
+  @media (min-width: $bp-768) {
+    display: block;
+  }
+}
+
+.pro-banner-arrow {
+  font-size: 20px;
+  color: $white;
+  font-weight: 700;
+}

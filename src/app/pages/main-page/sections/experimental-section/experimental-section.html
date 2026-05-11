@@ -1,0 +1,45 @@
+<section class="section">
+  <div class="inner">
+    <div class="group">
+      <div class="group-header">
+        <h2 class="group-title">Экспериментальные возможности</h2>
+        <p class="group-subtitle">
+          Функции на стадии бета-тестирования — доступны для опробования, но могут иметь ограничения
+        </p>
+      </div>
+      <div class="grid">
+        <div class="card" *ngFor="let card of experimental">
+          <div class="card-top">
+            <img [src]="card.icon" alt="" aria-hidden="true" width="48" height="48" />
+            <span class="badge" [ngClass]="{ 'badge-dev': card.badge === 'В разработке' }">
+              {{ card.badge }}
+            </span>
+          </div>
+          <h3 class="card-title">{{ card.title }}</h3>
+          <p class="card-desc">{{ card.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-header">
+        <h2 class="group-title">В разработке</h2>
+        <p class="group-subtitle">
+          Возможности, которые появятся в ближайших обновлениях OpenIDE
+        </p>
+      </div>
+      <div class="grid">
+        <div class="card" *ngFor="let card of inDevelopment">
+          <div class="card-top">
+            <img [src]="card.icon" alt="" aria-hidden="true" width="48" height="48" />
+            <span class="badge" [ngClass]="{ 'badge-dev': card.badge === 'В разработке' }">
+              {{ card.badge }}
+            </span>
+          </div>
+          <h3 class="card-title">{{ card.title }}</h3>
+          <p class="card-desc">{{ card.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

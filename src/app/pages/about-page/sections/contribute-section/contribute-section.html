@@ -1,0 +1,27 @@
+<section class="section">
+  <div class="inner">
+    <div class="header">
+      <div class="label">Участие в проекте</div>
+      <h2 class="title">Присоединяйтесь к сообществу OpenIDE</h2>
+      <p class="subtitle">
+        OpenIDE — это совместный проект. Любой вклад, большой или маленький, помогает сделать IDE лучше для всех
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card" *ngFor="let way of ways">
+        <div class="card-icon">
+          <img [src]="way.icon" alt="" aria-hidden="true" width="48" height="48" />
+        </div>
+        <h3 class="card-title">{{ way.title }}</h3>
+        <p class="card-text">{{ way.text }}</p>
+        <a [href]="way.href" class="card-link">{{ way.linkText }} →</a>
+      </div>
+    </div>
+
+    <div class="cta">
+      <p class="cta-text">Нет времени на разработку, но хотите поддержать проект?</p>
+      <app-button href="/pro/" size="md">Поддержать через OpenIDE Pro</app-button>
+    </div>
+  </div>
+</section>

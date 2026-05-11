@@ -1,0 +1,24 @@
+<section class="section">
+  <div class="inner">
+    <div class="header">
+      <h2 class="title">Новости OpenIDE</h2>
+      <a href="/blog/" class="all-link">Все новости →</a>
+    </div>
+
+    <div class="grid">
+      <a *ngFor="let item of news" [href]="item.href" class="card">
+        <div class="card-img" aria-hidden="true">
+          <div class="card-img-placeholder"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-tag">{{ item.tag }}</span>
+            <span class="card-date">{{ item.date }}</span>
+          </div>
+          <h3 class="card-title">{{ item.title }}</h3>
+          <p class="card-excerpt">{{ item.excerpt }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

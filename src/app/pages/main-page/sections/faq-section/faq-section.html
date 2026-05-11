@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="inner">
+    <div class="left">
+      <h2 class="title">Часто задаваемые вопросы</h2>
+      <nav class="tabs" aria-label="FAQ категории">
+        <button
+          *ngFor="let tab of tabs"
+          class="tab"
+          [ngClass]="{ 'tab-active': activeTab() === tab }"
+          (click)="setCategory(tab)"
+        >
+          {{ tab }}
+        </button>
+      </nav>
+    </div>
+
+    <div class="right">
+      <div
+        *ngFor="let item of items; let idx = index"
+        class="item"
+        [ngClass]="{ 'item-open': openIndex() === idx }"
+      >
+        <button
+          class="question"
+          (click)="toggle(idx)"
+          [attr.aria-expanded]="openIndex() === idx"
+        >
+          <span>{{ item.question }}</span>
+          <span class="chevron" aria-hidden="true">{{ openIndex() === idx ? '−' : '+' }}</span>
+        </button>
+        <div class="answer" *ngIf="openIndex() === idx">
+          <p>{{ item.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

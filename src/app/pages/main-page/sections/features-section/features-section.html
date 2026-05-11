@@ -1,0 +1,24 @@
+<section class="features">
+  <div class="inner">
+    <div class="header">
+      <div class="header-left">
+        <h2 class="title">Возможности OpenIDE</h2>
+      </div>
+      <p class="subtitle">
+        OpenIDE предоставляет полноценную среду разработки с поддержкой множества языков,
+        фреймворков и инструментов
+      </p>
+    </div>
+
+    <div class="grid">
+      <a *ngFor="let feature of features" [href]="feature.href" class="card">
+        <div class="icon-wrap">
+          <img [src]="feature.icon" alt="" aria-hidden="true" width="48" height="48" />
+        </div>
+        <h3 class="card-title">{{ feature.title }}</h3>
+        <p class="card-desc">{{ feature.description }}</p>
+        <span class="card-link">Подробнее →</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section class="pro-form" id="pro-form">
+  <div class="inner">
+    <div class="card">
+      <img src="/images/pro/form-pattern.svg" alt="" aria-hidden="true" class="pattern" />
+
+      <h3 class="title">Обсудить использование OpenIDE Pro</h3>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <div class="fields">
+          <div class="field" *ngFor="let field of fields">
+            <label class="label" [for]="field.id">
+              {{ field.label }} <span aria-hidden="true">*</span>
+            </label>
+            <input
+              [id]="field.id"
+              [type]="field.type"
+              [formControlName]="field.id"
+              [ngClass]="{ 'input-error': error(field.id) }"
+              class="input"
+              [disabled]="formService.submitted()"
+              [attr.min]="field.type === 'number' ? 1 : null"
+              required
+            />
+            <span class="error-text" *ngIf="error(field.id)">{{ error(field.id) }}</span>
+          </div>
+        </div>
+
+        <div class="checkbox-row">
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              class="checkbox"
+              formControlName="acceptPolicy"
+              [disabled]="formService.submitted()"
+            />
+            <span>
+              Я соглашаюсь на
+              <a href="/privacy-policy/" class="policy-link" target="_blank" rel="noopener noreferrer">
+                обработку персональных данных
+              </a>
+            </span>
+          </label>
+          <p class="checkbox-error" *ngIf="error('acceptPolicy')">{{ error('acceptPolicy') }}</p>
+        </div>
+
+        <div class="submit-row">
+          <ng-container *ngIf="!formService.submitted(); else submittedTpl">
+            <button
+              type="submit"
+              class="btn btn-md submit-btn"
+              [disabled]="formService.submitting()"
+            >
+              <span class="spinner" aria-label="Загрузка" *ngIf="formService.submitting()"></span>
+              <ng-container *ngIf="!formService.submitting()">Отправить запрос</ng-container>
+            </button>
+          </ng-container>
+          <ng-template #submittedTpl>
+            <button type="button" class="btn btn-md btn-success submit-btn" disabled>
+              ✓ Отправлено
+            </button>
+            <p class="success-msg">Спасибо! Мы скоро свяжемся с вами.</p>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

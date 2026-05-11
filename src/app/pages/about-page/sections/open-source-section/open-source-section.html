@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="inner">
+    <div class="left">
+      <div class="label">Открытый исходный код</div>
+      <h2 class="title">Свобода — не маркетинг, а основа проекта</h2>
+      <p class="description">
+        OpenIDE изначально проектировался как открытый проект. Это не добавленная функция, а
+        фундаментальный принцип: никаких закрытых компонентов, никаких скрытых зависимостей.
+      </p>
+      <div class="links">
+        <a href="https://gitflic.ru/project/openide/openide" class="link-btn" target="_blank" rel="noopener noreferrer">
+          <img src="/icons/languages/gitflic.svg" alt="" aria-hidden="true" width="20" height="20" />
+          GitFlic
+        </a>
+        <a href="https://github.com/openide-ru/openide" class="link-btn" target="_blank" rel="noopener noreferrer">
+          <img src="/icons/languages/git.svg" alt="" aria-hidden="true" width="20" height="20" />
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="fact-card" *ngFor="let fact of facts">
+        <div class="fact-icon" aria-hidden="true">✓</div>
+        <div>
+          <h3 class="fact-title">{{ fact.title }}</h3>
+          <p class="fact-text">{{ fact.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

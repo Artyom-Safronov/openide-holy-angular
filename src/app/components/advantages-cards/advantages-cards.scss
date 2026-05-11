@@ -1,0 +1,65 @@
+@use 'styles/variables' as *;
+
+.advantages-cards {
+  padding: 0 24px;
+  margin-bottom: 80px;
+}
+
+.inner {
+  max-width: $container-max;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: $bp-768) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: $radius-card;
+  padding: 32px;
+
+  @media (max-width: $bp-820) {
+    padding: 24px;
+  }
+}
+
+.card-purple { background-color: $violet-pale; }
+.card-gray { background-color: $gray-3; }
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  color: $black;
+  margin-bottom: 12px;
+
+  @media (max-width: $bp-768) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: $black;
+
+  @media (max-width: $bp-768) {
+    font-size: 15px;
+  }
+}

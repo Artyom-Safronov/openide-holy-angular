@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="inner">
+    <a href="/" class="logo">
+      <img src="/images/logo.svg" alt="OpenIDE" width="120" height="32" />
+    </a>
+
+    <nav class="nav">
+      <app-header-nav-link
+        *ngFor="let item of navItems"
+        [href]="item.href"
+        [label]="item.label"
+        [active]="item.active ?? false"
+        [external]="item.external ?? false"
+      ></app-header-nav-link>
+    </nav>
+
+    <div class="actions">
+      <app-button href="/download/" size="sm">Скачать</app-button>
+      <button
+        class="burger"
+        [ngClass]="{ 'burger-open': mobileOpen() }"
+        (click)="toggleMobile()"
+        aria-label="Меню"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" [ngClass]="{ 'mobile-menu-hidden': !mobileOpen() }">
+    <nav class="mobile-nav">
+      <a
+        *ngFor="let item of navItems"
+        [href]="item.href"
+        class="mobile-link"
+        [ngClass]="{ 'mobile-link-active': item.active }"
+        (click)="mobileOpen.set(false)"
+      >
+        {{ item.label }}
+        <img *ngIf="item.external" src="/icons/external-link.svg" alt="" aria-hidden="true" />
+      </a>
+    </nav>
+    <app-button href="/download/" size="sm" [fullWidth]="true">Скачать</app-button>
+  </div>
+</header>

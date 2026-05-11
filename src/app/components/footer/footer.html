@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="inner">
+    <div class="top">
+      <div class="left">
+        <a href="/" class="logo">
+          <img src="/images/logo.svg" alt="OpenIDE" width="120" height="32" />
+        </a>
+        <nav class="nav">
+          <a *ngFor="let link of navLinks" [href]="link.href" class="nav-link">{{ link.label }}</a>
+        </nav>
+      </div>
+
+      <div class="right">
+        <div class="right-logo">
+          <img src="/images/logo.svg" alt="" aria-hidden="true" width="120" height="32" />
+        </div>
+        <nav class="legal">
+          <a *ngFor="let link of legalLinks" [href]="link.href" class="legal-link">{{ link.label }}</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="bottom">© OpenIDE, 2026. Все права защищены.</div>
+  </div>
+</footer>

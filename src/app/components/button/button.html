@@ -1,0 +1,9 @@
+<a
+  [href]="disabled() ? null : href()"
+  [ngClass]="classes()"
+  [attr.aria-disabled]="disabled() || null"
+  [target]="target() ?? null"
+  [rel]="rel() ?? null"
+>
+  <ng-content></ng-content>
+</a>
